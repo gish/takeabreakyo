@@ -4,14 +4,13 @@
   "description": "Sends yo to user with reminder to stand up",
   "main": "index.js",
   "scripts": {
-    "start": "coffee server.coffee"
+    "start": "coffee server.coffee",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Erik Hedberg <erik@hedberg.at>",
   "license": "BSD-2-Clause",
   "devDependencies": {
     "yo-api": "~0.2.0",
-    "restify": "~2.8.2",
-    "coffee-script": "~1.7.1"
+    "restify": "~2.8.2"
   }
 }
