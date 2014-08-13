@@ -29,7 +29,6 @@ Users = ->
     for name, time of subscribeTimeByUser
       console.log "Remove #{name} #{time} #{now} (#{now-time})"
       if time + offset <= now
-        console.log "add to remove #{name}"
         toRemove.push name
     [remove name for name in toRemove]
 
@@ -42,17 +41,13 @@ Users = ->
 users = Users()
 
 runEngine = ->
-  console.log "Starting server"
-  cleanTimer = setInterval ->
-    console.log "Cleaning up users"
-    users.cleanUp()
-  , config.sessionTime + 1e3*60
-
-  notifyTimer = setInterval ->
+  timer = setInterval ->
     userNames = users.getUserNames()
     console.log "Notifying users", userNames
     users.notify name for name in userNames
-  , 5*1e3
+    console.log "Cleaning up users"
+    users.cleanUp()
+  , config.breakInterval * 1e3 * 60
 
 server = restify.createServer()
 respond =  (req, res, next) ->
@@ -67,3 +62,4 @@ server.head '/api/v1/subscribe/:username', respond
 
 server.listen 8080, -> console.log "#{server.name} listening at #{server.url}"
 runEngine()
+
