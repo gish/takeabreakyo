@@ -10,7 +10,8 @@
   "author": "Erik Hedberg <erik@hedberg.at>",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "yo-api": "~0.2.0",
-    "restify": "~2.8.2"
+    "restify": "~2.8.2",
+    "simple-node-logger": "^0.91.91",
+    "yo-api": "~0.2.0"
   }
 }
