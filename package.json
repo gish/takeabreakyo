@@ -4,6 +4,7 @@
   "description": "Sends yo to user with reminder to stand up",
   "main": "index.js",
   "scripts": {
+    "start": "coffee server.coffee"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Erik Hedberg <erik@hedberg.at>",
