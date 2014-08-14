@@ -6,9 +6,7 @@ log = require './lib/log'
 runEngine = ->
   timer = setInterval ->
     userNames = users.getUserNames()
-    log.info "Notify users"
     users.notify name for name in userNames
-    log.info "Clean up users"
     users.cleanUp()
   , config.breakInterval * 1e3 * 60
 
