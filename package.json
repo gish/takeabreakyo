@@ -10,6 +10,7 @@
   "author": "Erik Hedberg <erik@hedberg.at>",
   "license": "BSD-2-Clause",
   "devDependencies": {
+    "mandrill-api": "^1.0.40",
     "restify": "~2.8.2",
     "simple-node-logger": "^0.91.91",
     "yo-api": "~0.2.0"
