@@ -22,5 +22,5 @@ serverResponse =  (req, res, next) ->
 server.get '/api/v1/subscribe/:username', serverResponse
 server.head '/api/v1/subscribe/:username', serverResponse
 
-server.listen 8080, -> log.info "#{server.name} listening at #{server.url}"
+server.listen config.serverPort, -> log.info "#{server.name} listening at #{server.url}"
 runEngine()
