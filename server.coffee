@@ -19,8 +19,9 @@ serverResponse =  (req, res, next) ->
   emailLogger.send 'Add user', username
   next()
 
-server.get '/api/v1/subscribe/:username', serverResponse
-server.head '/api/v1/subscribe/:username', serverResponse
+server.use restify.queryParser()
+server.get '/api/v1/subscribe/', serverResponse
+server.head '/api/v1/subscribe/', serverResponse
 
 server.listen config.serverPort, -> log.info "#{server.name} listening at #{server.url}"
 runEngine()
